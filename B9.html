@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const carts = [
+            {
+                product_name: "Cam",
+                price: 20000,
+                quantity: 5,
+            },
+            {
+                product_name: "Táo",
+                price: 30000,
+                quantity: 3,
+            },
+            {
+                product_name: "Xoài",
+                price: 40000,
+                quantity: 2,
+            },
+        ];
+        // Cách 1:
+        function totalPrice(carts) {
+            let total = 0;
+            for (let i = 0; i < carts.length; i++) {
+                total += carts[i].price * carts[i].quantity;
+            }
+            return total;
+        }
+
+        console.log("Cách 1", totalPrice(carts)); 
+
+        // Cách 2:
+        let reduceCart = carts.reduce((acc,value,arr)=>{
+            return acc + value.price*value.quantity
+        },0)
+        console.log("Cách 2", reduceCart);
+
+    </script>
+</body>
+</html>
